@@ -1,0 +1,26 @@
+name: smoke
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install exactly what a cloner installs
+        run: pip install -r requirements.txt
+      - name: Compile every module
+        run: python -m compileall -q .
+      # Bare-mode execution runs the full UI script (widgets, diagrams, presets,
+      # saved-run loader) without a browser; it fails on any import or API drift
+      # in a new Streamlit/pandas/matplotlib release. No API key needed — runs
+      # against live models only ever start from a user click.
+      - name: Bare-mode run of the app
+        run: python app.py
