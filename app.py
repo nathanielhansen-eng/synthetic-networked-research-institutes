@@ -673,6 +673,12 @@ if go:
     if not problem.strip():
         st.sidebar.error("Enter a research question.")
         st.stop()
+    if not key.strip() and not os.environ.get("ANTHROPIC_API_KEY"):
+        st.sidebar.error("No API key — enter your Anthropic API key at the top of this sidebar.")
+        status.warning("⚠️ **No Anthropic API key.** The institutes can't run without one — "
+                       "enter your key in the sidebar (top field) and press ▶ Run again. "
+                       "Keys are used for this session only and never stored.")
+        st.stop()
     stamp = time.strftime("%Y%m%d_%H%M%S")
     team = "dialed" if comp.startswith("Adjust") else "archetypes"
     cfg = {"model": model, "team": team,
@@ -731,7 +737,17 @@ if run:
     else:
         _log = pathlib.Path(run["logf"])
         _txt = _log.read_text(encoding="utf-8") if _log.exists() else ""
-        status.error("Run failed:\n\n```\n" + (_txt[-1500:] or "(no output)") + "\n```")
+        if ("Could not resolve authentication method" in _txt
+                or "authentication_error" in _txt or "invalid x-api-key" in _txt):
+            status.error("⚠️ **The run couldn't authenticate with Anthropic** — the API key "
+                         "is missing or invalid. Enter a valid key at the top of the sidebar "
+                         "and press ▶ Run again. Keys are used for this session only and "
+                         "never stored.")
+        elif "credit balance is too low" in _txt:
+            status.error("⚠️ **Anthropic rejected the run: this key's credit balance is too "
+                         "low.** Add credits to your Anthropic account, then try again.")
+        else:
+            status.error("Run failed:\n\n```\n" + (_txt[-1500:] or "(no output)") + "\n```")
 
 # ---- post-run area: briefings / metrics / cross-run comparison, in tabs ----
 _last = st.session_state.get("last_out")
