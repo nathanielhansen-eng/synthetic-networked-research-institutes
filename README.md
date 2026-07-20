@@ -2,6 +2,8 @@
 
 ![smoke](https://github.com/nathanielhansen-eng/synthetic-networked-research-institutes/actions/workflows/smoke.yml/badge.svg)
 
+**Live demo:** [synthetic-networked-research-institutes.streamlit.app](https://synthetic-networked-research-institutes.streamlit.app/) — bring your own Anthropic API key; runs cost real money.
+
 This is an interactive experiment in social epistemology, the psychology of science, and the effect of personas on LLMs. It combines four core components: 
 
 1. Research institutes constituted by LLM agent researchers with *personas*
