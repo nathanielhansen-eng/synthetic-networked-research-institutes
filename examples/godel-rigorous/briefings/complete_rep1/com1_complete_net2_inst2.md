@@ -1,0 +1,59 @@
+# Institute Briefing — com1_inst2
+
+**Problem.** What explains why the cross-cultural difference in reference intuitions (East Asians more descriptivist, Westerners more causal-historical) attaches specifically to certain Kripkean probes and not others, and what is its underlying mechanism?
+
+## Conclusion
+
+The cross-cultural effect is empirically real and robust to translation ambiguity and presupposition clarity, but it is **not Gödel-specific**—it generalizes to carefully-tested Jonah cases and possibly other reference probes. The mechanism is over-determined by at least three partially independent factors: (1) response-style bias under high uncertainty (documented cross-culturally but unmeasured on this task), (2) linguistic pragmatics from article-marking differences and topic-repair strategies in Mandarin (theoretically motivated but untested via direct comparison of bare nouns vs. demonstratives), and (3) possibly genuine but modest differences in default reasoning about identity persistence under counterfactuals. **None of these mechanisms has been directly isolated on the Gödel/Jonah probes themselves.** The cell is currently explaining the pattern post-hoc rather than predicting it.
+
+## Confidence
+0.54 — The effect's reality is solid (0.75+), but its mechanism is opaque. The falsification of the Gödel-specificity claim (via Jonah generalization) undermines the primary hypothesis offered by the cell's Disruptor and requires explanation to account for a broader pattern. Response-style bias is documented across many domains but unmeasured here; article-marking pressure is linguistically plausible but its causal role depends on an unrun demonstrative-marking experiment. Confidence cannot rise above mid-range until mechanisms are directly measured rather than inferred.
+
+## Key reasons and evidence
+
+- **The effect is real and persists across replications.** Machery, Mallon, Nichols, and Stich (2004) reported the cross-cultural difference; subsequent work controlling for question ambiguity (Sytsma & Livengood) and using presuppositions presented in easy-to-follow manner still observed the same pattern. Variation in intuitions remains even when translation artifacts are controlled.
+
+- **The effect is not Gödel-specific.** Cross-cultural differences in reference responses were found in cases patterned after Kripke's Jonah case, in which Western participants were significantly more likely to choose the Kripkean answer than East Asian participants (Machery et al. 2004). This falsifies the hypothesis that parsing burden specific to the Gödel case (with its two-description contrast and explicit logical contradiction) is the sole driver. The puzzle shifts from "why Gödel alone?" to "which reference probes elicit the effect, and what do they share?"
+
+- **Response-style bias is documented and operative under uncertainty in East Asian populations.** Compared to European-heritage respondents, East-Asian respondents tend to be more ambivalent and moderate in their responses (Heine & Lehman, cross-cultural psychology literature). Acquiescence response bias is higher in nations high on family collectivism and uncertainty avoidance (Hardin & Konishi, Lalwani et al.). The Gödel case involves extreme uncertainty (counterfactual identity shift) and personal relevance (judging whether a name refers to one person or another)—both documented triggers of response-style amplification. **However:** No direct measurement of acquiescence, modesty, or uncertainty-driven response bias on the Gödel/Jonah probes themselves has been published.
+
+- **Linguistic pragmatics from article-marking differences is theoretically sound but untested on the critical variable.** Mandarin encodes definiteness via word order, discourse context, and optional demonstratives, unlike English's obligatory article system. Mandarin bare nouns permit both definite and indefinite readings depending on context (Li 1999, Cheng & Sybesma 1999). In topic-prominent languages like Mandarin, zero anaphora is the norm under topic continuity; when topic continuity breaks, the language recruits demonstratives (na 'that') as pragmatic topic-repair devices (Gundel et al., Paul 2014). The Gödel case plausibly disrupts the topic chain (initial topic "the person John learned about" contradicted by "the person who actually did X"), which could recruit demonstrative-marking in Mandarin speakers, creating apparent descriptivist responses. **Critical gap:** The direct comparison of bare-noun vs. demonstrative-marked Mandarin versions of the Gödel case on native speakers has never been conducted. This is the single most actionable test of the parsing hypothesis.
+
+- **Genuine semantic differences in reference reasoning are possible but currently inferred, not measured.** Pro-drop languages may train pragmatic inference habits that differ from non-pro-drop languages (Vaid & Chengappa). The name-via-false-description structure of the Gödel case is semantically distinctive. These factors may combine with linguistic and response-style mechanisms. However, without direct measurement of metalinguistic reasoning about reference on the probes (e.g., via explicit justification analysis), this component remains speculative.
+
+## What would falsify this
+
+- **If careful replication of Jonah-case methodology shows that the effect collapses on Jonah when directly compared to Gödel (i.e., strong Gödel effect, weak/absent Jonah effect with identical methods), the Disruptor's parsing-specificity claim recovers plausibility,** and the puzzle reverts to explaining what is distinctive about Gödel. The cell's current explanation must account for why two cases requiring similar pragmatic and response-style work produce different effect sizes.
+
+- **If a native-Mandarin demonstrative-marked version of the Gödel/Jonah probes ("那个真正发现...的人" / "that person who really discovered...") produces effect sizes equal to or larger than bare-noun versions,** the linguistic pragmatics hypothesis (both article-marking and topic-repair accounts) is falsified. Response-style bias or genuine semantic difference would then become primary mechanisms.
+
+- **If explicit response-style bias measures (acquiescence, modesty under uncertainty, uncertainty avoidance) show no correlation with the effect after controlling for language group,** response-style amplification is ruled out, and the effect must be driven by language structure or semantics alone.
+
+- **If young native-Mandarin children (age 5–7, before substantial English L2 exposure) show no descriptivist bias on the Gödel/Jonah probes when tested in native Mandarin,** the effect is learned through L2 English exposure or acquired cross-cultural response conventions, not foundational to Mandarin speakers' reference reasoning.
+
+- **If the effect appears with equal magnitude on unrelated reference probes (Twin Earth, fictional names, natural kinds without description) that lack the counterfactual structure and topic disruption of Gödel/Jonah,** the effect is not probe-specific and broad cognitive or response-style mechanisms dominate; the entire framing of the puzzle requires revision.
+
+## Directions for further research
+
+- **Run the demonstrative-marking Mandarin experiment (Priority 1).** Administer Gödel and Jonah cases to native Mandarin speakers in four conditions: (a) bare noun ("那发现...的人"); (b) explicit demonstrative ("那个发现...的人"); (c) numeral-classifier ("那一个发现...的人"); (d) English. Measure effect sizes (proportion of descriptivist responses) in each condition. If demonstrative-marked conditions show significantly lower effect sizes than bare nouns, parsing pressure is operative. If effect persists at equal magnitude, parsing is not primary.
+
+- **Measure response-style bias directly on the Gödel/Jonah probes.** Administer validated acquiescence, modesty, and uncertainty-avoidance scales (adapted from Hardin & Konishi, Lalwani et al.) alongside the reference cases in both East Asian and Western samples. Run logistic regression predicting "descriptivist response" from language group, response-style bias measure, and their interaction. If response-style independently predicts the effect controlling for group, it is a primary mechanism.
+
+- **Conduct careful replication comparing Gödel vs. Jonah effect sizes using identical methodology.** Use matched sample sizes, identical response formats (forced choice vs. open justification), and identical instruction clarity across studies. If Jonah effect sizes are substantially lower than Gödel in direct comparison, the Disruptor's parsing hypothesis gains traction. If they are equal, the puzzle is broader than Gödel-specificity alone.
+
+- **Test the developmental trajectory in native-Mandarin children (ages 5–7, 7–9, 9–11) with English L2 exposure controlled.** Administer the Gödel/Jonah probes in native Mandarin to children matched on age and L2 English exposure. If native-language children show no descriptivist bias, the effect is acquired through L2 English or cross-cultural response conventions. If present, it reflects foundational properties of Mandarin reference reasoning.
+
+- **Expand the probe set systematically.** Test whether the effect appears on Twin Earth, fictional-name cases, and other Kripkean reference scenarios that lack the explicit two-description contrast and counterfactual identity shift of Gödel/Jonah. Map which probes elicit the effect and which do not. Use this mapping to identify whether the effect is driven by cognitive load, linguistic ambiguity, or semantic properties of the specific reference structure.
+
+- **Analyze justifications and reasoning patterns.** Collect open-ended explanations of why respondents gave their answer (why "name refers to Gödel" or "name refers to Schmidt"). Code for evidence of response-style hedging (e.g., "both are somewhat reasonable"), reference-theoretic reasoning (e.g., "the name tracks what was originally learned"), and uncertainty markers. Examine whether East Asian respondents show systematically different justification patterns.
+
+## Open disagreements in the cell
+
+- **The Disruptor claims the effect is driven by parsing pressure specific to Mandarin's topic-prominent structure and demonstrative-marking strategy under referential disruption.** This predicts Gödel-specificity (because Gödel uniquely forces topic re-anchoring) and predicts that demonstrative-marked versions eliminate the effect. The Jonah generalization directly falsifies the Gödel-specificity prediction; the demonstrative-marking test will directly test the mechanism. The Disruptor's hypothesis is coherent but currently falsified by the empirical evidence.
+
+- **The Architect (multi-mechanism institute) claims the effect is over-determined by response-style bias, linguistic pragmatics, and possibly genuine semantic difference in reference reasoning.** This account survives the Jonah generalization better (it does not predict Gödel-specificity), but it does not predict which specific probes will elicit the effect, and none of the three mechanisms has been directly measured on the Gödel/Jonah probes. The Architect's account is more comprehensive but less falsifiable until mechanisms are isolated.
+
+- **The Shield agrees that multiple mechanisms are plausible but maintains that post-hoc explanation of a pattern is not the same as isolation of causal mechanisms.** Until the demonstrative-marking test, response-style bias measurement, and developmental test are conducted, the cell is explaining rather than predicting. Confidence should reflect this evidential gap.
+---
+
+*This document is a run artifact generated by the [Synthetic Networked Research Institutes](https://github.com/nathanielhansen-eng/synthetic-networked-research-institutes) project. To cite it, use the metadata in [CITATION.cff](../../../../CITATION.cff).*

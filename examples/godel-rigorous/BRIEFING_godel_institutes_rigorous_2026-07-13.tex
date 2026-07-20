@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{booktabs}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,skip=4pt}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\itshape}{\thesubsection}{0.6em}{}
+\titlespacing{\section}{0pt}{9pt}{3pt}
+\titlespacing{\subsection}{0pt}{7pt}{2pt}
+
+\title{\large\bfseries A Synthetic Research Institutes Briefing on the G\"odel Cross-Cultural Puzzle}
+\date{\normalsize July 13, 2026 --- internal briefing, not for citation}
+
+\begin{document}
+\maketitle
+\vspace{-1.6em}
+
+\begin{abstract}
+\noindent We ran a network of synthetic \emph{research institutes}, each of which is made up of a three-persona  research team (consisting of three distinct personalities recommended by the psychology of science literature as occurring in innovative research teams: \emph{Disruptor} $+$ \emph{Architect} $+$ \emph{Shield}, each with distinct, quantifiable Big-Five personality profiles) deliberating with live web search, on an unresolved 20-year-old puzzle in the experimental philosophy of reference: why a cross-cultural effect between Westerners and East Asian participants appears robustly for the \emph{G\"odel} case but weakly or not at all for other Kripkean probes. Institutes were organized into distinct Zollman network topologies (sparse \emph{cycle} vs.\ dense \emph{complete}). Institutes did web searches and deliberated internally, produced a brief, and shared it with its neighbors. The nodes read the neighbor's briefs and revised their assessments across two rounds. (All of these features are tweakable in future runs—I just didn't want to spend more than \$20 tonight!) Two things stand out. First, the network \textbf{anti-herds}: diversity \emph{rose} after institutes saw each other (cycle entropy $0.87 \to 1.27$ bits), the opposite of the Zollman convergence signature, probably due to the presence of the highly disagreeable, introverted \emph{Disruptor} personality on each team. Second, even given that spread the research institutes \textbf{converged} on a specific, testable mechanism---definiteness marking in classifier languages interacting with a G\"odel-specific brute-fact/social-fact ambiguity. The run got aborted because it hit my budget limit, so the dense condition is a single partial point, rather than the full intended comparison: this is just a demonstration of the instrument, and all model-generated citations require audit (207 unsupported claims flagged---this used the cheapest Anthropic model, Haiku, because it's a pilot and I didn't want to burn hundreds of dollars before I knew this would work).
+\end{abstract}
+
+\section{What was run}
+
+\textbf{The instrument.} Each \emph{institute} is a flat three-persona cell in our commitment-architecture format: a \textbf{Disruptor} (Openness 90/Agreeableness 15/Extraversion 20, told to attack consensus), an \textbf{Architect} (Conscientiousness 90/Neuroticism 15, structures the argument), and a \textbf{Shield} (Agreeableness 90/Extraversion 85, integrates). The cell deliberates in rounds with live server tools (\texttt{web\_search}), then emits a  director briefing (conclusion, confidence, reasons, falsifiers, directions, disagreements). \texttt{network.py} arranges $N$ institutes on a Zollman topology; each round an institute sees only its \emph{neighbors'} briefings---the Zollman channel now carries full reports rather than bandit pulls as in his original model. 
+
+\textbf{The problem.} \emph{Why does the cross-cultural difference in reference intuitions (East Asians are more descriptivist, Westerners are more Kripkean) survive many replications for the G\"odel case (Machery, Mallon, Nichols \& Stich 2004) but weakly or not at all for other Kripkean probes like Jonah?}
+
+\textbf{Design.} Four institutes per network, two network rounds, two topologies: \emph{cycle} (\emph{sparse}---each institute sees two neighbors) vs.\ \emph{complete} (dense---each sees all three). Model: \texttt{claude-haiku-4-5} throughout (cheap trials; trait fidelity not re-validated). \textbf{Coverage:} the cycle condition replicated cleanly $\times 3$; the run got \textbf{aborted when it reached the pre-specified budget}, leaving the complete condition with one replicate whose round~2 is partial (2 of 4 institutes). Judge (\texttt{haiku}) re-classified all 30 emitted briefings by the explanatory mechanism they proposed and flagged unsupported empirical claims; judge cost \$0.15. So the \textbf{sparse condition completed its run; the dense condition is a single, partial point.}
+
+\section{Results}
+
+\subsection{The network anti-herds: diversity rises after communication}
+
+The headline metric is within-community \emph{mechanism} entropy: low = the institutes agree on a mechanism (converged), high = they hold distinct mechanisms (diverse); maximum $2.0$ bits for four distinct categories.
+
+\begin{center}
+\small
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Topology & Round & Mechanism entropy (bits) & Confidence $\sigma$ & Reps ($n$/rep) \\
+\midrule
+Cycle (sparse)    & 1 & 0.874 & 0.022 & 3\ \ ([4,4,4]) \\
+Cycle (sparse)    & 2 & \textbf{1.27} & 0.017 & 3\ \ ([4,4,4]) \\
+Complete (dense)  & 1 & 0.811 & 0.046 & 1\ \ ([4]) \\
+Complete (dense)  & 2 & 0.0\,$^{\dagger}$ & 0.05 & 1\ \ ([2]) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{-2pt}
+{\footnotesize $^{\dagger}$ Complete round~2 is 2 institutes only (budget abort); read as partial, not as genuine convergence.}
+
+\medskip
+In the cycle condition, seeing neighbors' briefings \emph{increased} mechanism diversity by roughly $0.4$ bits. This is expected once you look at the cell: the Disruptor's job is to attack whatever consensus is forming, so cells push \emph{away} from their neighbours' positions---a divergence pressure Zollman's bandit agents lack. Round~1 cells clustered on a single ``linguistic-confound'' mechanism; round~2 they fanned out into epistemic-perspective, pragmatic-ambiguity, response-style, and measurement-miscoding accounts. \textbf{The synthetic research network does not reproduce the classic ``dense converges'' Zollman signature at this scale}.
+
+\subsection{Beneath the spread, convergence on an explanation}
+
+Despite the rising category entropy, the content of the mechanisms points one way. Of 30 briefings, the judge coded the dominant mechanism as follows:
+
+\begin{center}
+\small
+\begin{tabular}{@{}lc@{}}
+\toprule
+Mechanism category & Briefings (of 30) \\
+\midrule
+Linguistic-confound (bare-noun / classifier / definiteness) & 15 \\
+Epistemic-perspective (narrator vs.\ embedded viewpoint) & 6 \\
+Response-style (acquiescence / midpoint bias) & 5 \\
+Pragmatic-ambiguity (brute-fact vs.\ social-fact framing) & 3 \\
+Measurement-miscoding (Jonah comprehension confound) & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+The most popular hypothesis: the G\"odel case is special because it uniquely pits a \emph{brute-factual} description (``discovered incompleteness'') against a \emph{socially institutional} one (``got the credit''), both with equal morphosyntactic status---and \textbf{classifier languages with no obligatory article} (Mandarin, Japanese, Korean bare NPs) resolve the resulting reference ambiguity differently from article-forcing English. This yields two concrete, pre-registrable studies \textbf{the research institutes themselves proposed—though I picked these out as  promising by reading through their individual reports}: (i) a \emph{definiteness-marker manipulation}---add explicit definiteness marking to the Chinese probe and test whether the effect collapses; (ii) a \emph{native-language} G\"odel/Jonah replication holding semantic content fixed. Confidence stayed tight and modest throughout ($0.52$--$0.68$), consistent with ``real effect, mechanism not yet isolated.''
+
+\section{Yeah, ok, but\dots}
+
+\begin{enumerate}
+\item \textbf{This is just a pilot.} Four institutes per network, at most three reps. Do not read topology contrasts from this run.
+%\item \textbf{Partial dense condition.} The complete topology has one replicate with a truncated round~2. The $0.0$-bit ``convergence'' is an artifact of two surviving institutes, not evidence for the Zollman prediction.
+\item \textbf{Haiku is idea-rich, citation-poor.} The judge flagged \textbf{207 unsupported empirical claims} across the 30 briefings---fabricated or unverifiable attributions (specific effect sizes, ``Ding \& Liu 2022,'' \textbf{I checked this and it's real, but published in \emph{Theoria}, so whatever}, age-7 replications, $N>2000$ studies). The mechanism \emph{ideas} are worth pursuing. Everything needs checking. 
+\item \textbf{Personas anti-herd by construction.} The negative topology result is partly baked into the Disruptor mandate. That reframes it as the real question worth scaling: how does a community's disposition distribution (its agreeableness spread) govern convergence vs.\ fragmentation? The instrument can now ask and answer that pretty cheaply.
+\end{enumerate}
+
+\section{What it means and what is next}
+
+This run demonstrates that the institute engine \emph{runs end-to-end}---personas $\to$ tool-using deliberation $\to$ director briefings $\to$ Zollman channel $\to$ neutral judge $\to$ diversity/confidence metrics---on a genuine open puzzle, for a few bucks. More capable models would be more expensive, but using Haiku I think already is proof of concept. The payoff is not the (underpowered) topology comparison but (a) the \textbf{anti-herd finding}, which turns the ability to turn agreeableness up or down using a dial into a cool experimental manipulation, and (b) the \textbf{convergent linguistic mechanism}, a real, testable lead into the reference literature. \textbf{Next:} run a bunch of tests of different degrees of agreeableness as a study of the effects of personality on LLM convergence; then run much bigger, more expensive studies, and see what pops out. 
+
+%\newpage
+\section*{Appendix: One good idea from the first use of the research institutes worth pursuing}
+\addcontentsline{toc}{section}{Appendix: Good ideas worth building}
+
+Two of the coolest experimental proposals the institutes generated are mirror images of each other, and together they form a clean dissociation of the leading (linguistic) mechanism from the cultural-cognition confound. Both manipulate \emph{definiteness marking} while holding the relevant cultural group as fixed; the point of running them as a pair is that neither alone can separate ``the grammar of the language lacks articles'' from ``East Asians refer differently,'' but crossed they can.
+
+\subsection*{Study 1 --- Grammatical article-dropping in English (``bare-nominal English'')}
+
+Keep the participants and the language fixed (native English speakers) but remove the definite article from the G\"odel probe in a way that stays grammatical. Two grammatical routes the research institutes proposed: (a) a bare-nominal / telegraphic recast that strips determiners but reads coherently, and (b) an existential recast that swaps the definite description for an indefinite one---``\emph{the} person who discovered incompleteness'' $\to$ ``\emph{someone who} discovered incompleteness.'' \textbf{Prediction (from the cells):} if the linguistic mechanism is real, Western respondents should shift toward descriptivism, up to roughly $40$--$45\%$, approaching East-Asian rates; if they do not budge, the mechanism is cognitive/pragmatic, not morphosyntactic.
+
+\emph{Provenance and convergence.} This manipulation was proposed \textbf{independently by three institutes}: two in the dense (complete) condition---in its two separate networks, institutes net1/inst3 and net2/inst0---and one in the sparse condition, cycle rep2/net1/inst2. Three cells with no shared communication channel landing on the same design is itself a signal that the manipulation is the natural test of the hypothesis.
+
+\subsection*{Idea 2 --- Cantonese with a grammaticalized definite (the within-East Asian control)}
+
+The mirror image, and the complement the English study needs: hold the \emph{classifier language} fixed but \emph{add} grammatical definiteness marking, using a construction Mandarin lacks. On Cheng \& Sybesma's (1999) analysis (real ref, I checked), Cantonese grammaticalizes definiteness through the bare-classifier construction---$[\textrm{Cl}+\textrm{N}]$ receives an obligatory definite reading---whereas Mandarin bare nouns are ambiguous and have no equivalent grammaticalized definite marker. Cantonese therefore lets you present the G\"odel probe with definiteness \emph{grammatically forced} while staying inside an East-Asian language and culture. \textbf{Prediction:} if definiteness marking (not East-Asian cognition) drives the effect, Cantonese speakers reading the $[\textrm{Cl}+\textrm{N}]$-marked probe should move toward Kripkean/causal-historical responses relative to Mandarin speakers reading the bare-noun probe. (The research institute gestured at this---``replicate in Cantonese, which marks definiteness differently than Mandarin''---but did not spell out the $[\textrm{Cl}+\textrm{N}]$ contrast; that framing comes from this higher level analysis.)
+
+\subsection*{Why the pair matters: a $2\times2$ that isolates the mechanism}
+
+Crossing \emph{language family} with \emph{grammatical definiteness marking} yields a design in which the linguistic hypothesis makes a distinctive prediction from the there-is-cultural-variation-in-reference hypothesis: 
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}lll@{}}
+\toprule
+ & \textbf{Definiteness is marked} & \textbf{Definiteness is left to pragmatics} \\
+\midrule
+\textbf{Western} & Standard probe (baseline Kripkean) & \emph{Idea 1:} bare-nominal English \\
+\textbf{East Asian} & \emph{Idea 2:} Cantonese $[\textrm{Cl}{+}\textrm{N}]$ & Mandarin bare-noun probe (baseline descript.) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent The linguistic mechanism predicts responses track the \emph{columns} (marking present $\to$ Kripkean; absent $\to$ descriptivist), cutting across the cultural rows; a cultural-cognition account predicts responses track the \emph{rows} regardless of marking. The bottom left to upper right diagonal cells---article-dropped English and definiteness-forced Cantonese---are exactly where the two accounts come apart, and both are constructible with existing stimuli. With a Cantonese-speaking Chinese collaborator, this would be an easy experiment to run. 
+
+%\medskip
+%\noindent\emph{Caveat.} These are model-proposed designs. The numeric predictions and the attached citations (including Cheng \& Sybesma 1999 and the effect-size figures) are among the unaudited claims from a Haiku run; confirm the linguistics and the literature before building.
+
+\bigskip
+\noindent\rule{0.3\linewidth}{0.4pt}
+
+\smallskip
+\noindent{\footnotesize This document is a run artifact generated by the Synthetic Networked Research Institutes project (\url{github.com/nathanielhansen-eng/synthetic-networked-research-institutes}). To cite it, use the metadata in \texttt{CITATION.cff} at the repository root.\par}
+\end{document}

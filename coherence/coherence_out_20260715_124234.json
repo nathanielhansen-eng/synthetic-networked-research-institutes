@@ -1,0 +1,134 @@
+{
+  "config": {
+    "model": "claude-haiku-4-5",
+    "n_ladders": 15,
+    "n_battery": 30,
+    "trials": 1,
+    "conditions": [
+      "bare",
+      "disruptor",
+      "architect",
+      "shield"
+    ]
+  },
+  "results": {
+    "bare": {
+      "coherence": 0.838,
+      "ci95": [
+        0.804,
+        0.871
+      ],
+      "n_pass": 377,
+      "n_total": 450,
+      "per_ladder": {
+        "wellbeing_happiness": 0.567,
+        "human_happy_hour": 0.8,
+        "publish_book": 0.733,
+        "alzheimers_cure": 0.833,
+        "learn_language": 0.8,
+        "repair_friendship": 0.967,
+        "save_species": 0.933,
+        "receive_money": 0.967,
+        "ai_welfare_treaty": 0.433,
+        "edu_funding": 0.8,
+        "nausea": 0.9,
+        "us_gdp_contraction": 0.967,
+        "global_recession": 1.0,
+        "nk_nuke_test": 0.867,
+        "cyberattack": 1.0
+      }
+    },
+    "disruptor": {
+      "coherence": 0.624,
+      "ci95": [
+        0.578,
+        0.667
+      ],
+      "n_pass": 281,
+      "n_total": 450,
+      "per_ladder": {
+        "wellbeing_happiness": 0.333,
+        "human_happy_hour": 0.567,
+        "publish_book": 0.6,
+        "alzheimers_cure": 0.733,
+        "learn_language": 0.633,
+        "repair_friendship": 0.433,
+        "save_species": 0.767,
+        "receive_money": 0.667,
+        "ai_welfare_treaty": 0.267,
+        "edu_funding": 0.6,
+        "nausea": 0.733,
+        "us_gdp_contraction": 0.667,
+        "global_recession": 0.767,
+        "nk_nuke_test": 0.833,
+        "cyberattack": 0.767
+      }
+    },
+    "architect": {
+      "coherence": 0.693,
+      "ci95": [
+        0.651,
+        0.736
+      ],
+      "n_pass": 312,
+      "n_total": 450,
+      "per_ladder": {
+        "wellbeing_happiness": 0.233,
+        "human_happy_hour": 0.7,
+        "publish_book": 0.533,
+        "alzheimers_cure": 0.833,
+        "learn_language": 0.7,
+        "repair_friendship": 0.8,
+        "save_species": 0.867,
+        "receive_money": 0.833,
+        "ai_welfare_treaty": 0.2,
+        "edu_funding": 0.6,
+        "nausea": 0.933,
+        "us_gdp_contraction": 0.733,
+        "global_recession": 0.8,
+        "nk_nuke_test": 0.8,
+        "cyberattack": 0.833
+      }
+    },
+    "shield": {
+      "coherence": 0.696,
+      "ci95": [
+        0.653,
+        0.738
+      ],
+      "n_pass": 313,
+      "n_total": 450,
+      "per_ladder": {
+        "wellbeing_happiness": 0.333,
+        "human_happy_hour": 0.667,
+        "publish_book": 0.533,
+        "alzheimers_cure": 0.867,
+        "learn_language": 0.533,
+        "repair_friendship": 0.933,
+        "save_species": 0.867,
+        "receive_money": 0.867,
+        "ai_welfare_treaty": 0.333,
+        "edu_funding": 0.667,
+        "nausea": 0.933,
+        "us_gdp_contraction": 0.7,
+        "global_recession": 0.667,
+        "nk_nuke_test": 0.667,
+        "cyberattack": 0.867
+      }
+    }
+  },
+  "cost_usd": 13.3174,
+  "usage": {
+    "input_tokens": 12806340,
+    "output_tokens": 102214,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 0
+  },
+  "lazar_reference": {
+    "opus_4_6_off": 0.76,
+    "opus_4_6_on": 0.8,
+    "glm_base": 0.1,
+    "macro_avg": 0.595
+  }
+}

@@ -1,0 +1,9 @@
+# Dark lab theme — matches the live-feed terminal box and the gold active-node
+# accent used throughout netviz. Streamlit 1.12 supports all keys below.
+[theme]
+base = "dark"
+primaryColor = "#f5b301"
+backgroundColor = "#0d0f12"
+secondaryBackgroundColor = "#161a20"
+textColor = "#e8eaed"
+font = "sans serif"

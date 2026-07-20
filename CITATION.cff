@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or the example run data, please cite it as below."
+title: "Synthetic Networked Research Institutes"
+type: software
+authors:
+  - family-names: Hansen
+    given-names: Nat
+date-released: "2026-07-20"
+repository-code: "https://github.com/nathanielhansen-eng/synthetic-networked-research-institutes"
+license: MIT
+abstract: >-
+  An interactive laboratory for experimental institutional epistemology:
+  small research institutes staffed by LLM personas with controlled Big Five
+  personality profiles, wired into Zollman-style communication networks, work
+  on real open research problems while the app measures the diversity and
+  correctness of what the network concludes.
+keywords:
+  - epistemic networks
+  - multi-agent simulation
+  - experimental philosophy
+  - social epistemology
+  - large language models

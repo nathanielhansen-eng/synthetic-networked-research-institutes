@@ -1,0 +1,7 @@
+anthropic>=0.79
+pyyaml>=6.0
+numpy>=1.24
+pypdf>=4.0
+streamlit>=1.30
+matplotlib>=3.7
+pandas>=2.0

@@ -1,0 +1,332 @@
+{
+  "model": "claude-haiku-4-5",
+  "judge_model": "claude-haiku-4-5",
+  "reps": 2,
+  "institutes": 4,
+  "net_rounds": 2,
+  "topologies": [
+    "complete"
+  ],
+  "problem": "In the experimental philosophy of reference, Machery, Mallon, Nichols & Stich\n(2004) reported that East Asian participants were more likely than Western\nparticipants to give **descriptivist** responses to the **G\u00f6del case** (the\nG\u00f6del/Schmidt probe from Kripke). The durable puzzle: this cross-cultural\ndifference attaches **specifically to the G\u00f6del case** and is weak, absent, or\nreversed for other probes.\n\n**The explanatory question:** *What explains why the cross-cultural effect\nattaches to the G\u00f6del case in particular and not the others?*\n\nYou are given **no starting paper** \u2014 reconstruct the empirical landscape\nyourself via search, and do **not** treat this as a philosophy-only question.\nRelevant evidence may live in:\n\n- **linguistics** \u2014 definiteness/(in)definiteness marking, bare nominals,\n  classifier languages, generics, reference and specificity;\n- **psycholinguistics** and sentence processing;\n- **cultural & cognitive psychology** \u2014 analytic vs. dialectical/holistic\n  cognition (Nisbett), response styles, acquiescence bias;\n- **translation studies / cross-linguistic survey methodology**;\n- **and any other discipline you judge relevant.**\n\nFollow the evidence across fields, name your sources, and clearly distinguish\nwhat is established in the literature from what you are inferring. Adjudicate\namong candidate mechanisms, say which the evidence best supports, and state what\nwould falsify your account.\n\n---",
+  "summary": {
+    "complete": {
+      "1": {
+        "mean_category_entropy_bits": 1.156,
+        "mean_confidence_sd": 0.069,
+        "n_reps": 2
+      },
+      "2": {
+        "mean_category_entropy_bits": 1.75,
+        "mean_confidence_sd": 0.028,
+        "n_reps": 2
+      }
+    }
+  },
+  "records": [
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 1,
+      "institute": 0,
+      "category": "linguistic-confound",
+      "one_line": "English obligatory article marking creates definiteness-resolution pressure absent in article-less languages, partially explaining the direction but not the specificity of the G\u00f6del effect to East Asian participants; interaction with G\u00f6del-specific semantic structure likely required.",
+      "confidence": 0.48,
+      "unsupported_claims": [
+        "Machery et al. (2004) found East Asian participants more descriptivist on the G\u00f6del case",
+        "subsequent replications across 2000+ Mandarin speakers confirm the effect persists on G\u00f6del but does not reliably appear on Jonah, Twin Earth, or other reference probes",
+        "Mandarin and Japanese do not use articles; speakers use bare nominals, numeral-classifiers, and demonstratives to encode definiteness/indefiniteness variably across syntax, semantics, and discourse context",
+        "Second-language learners from article-less L1s struggle with English articles",
+        "Sytsma, Livengood & Rose (2012) showed that the original Machery et al. probe contained ambiguity in how the reference question was framed, and Japanese translation introduced additional ambiguity",
+        "subsequent careful replications (Machery et al., 2010; Barrett et al., 2012) show the effect persists even after disambiguating the question",
+        "English definite articles force a uniqueness presupposition absent from bare nominals in Mandarin/Japanese",
+        "the critical experiment\u2014administering the G\u00f6del probe to native Mandarin/Japanese speakers in their native language (not English) while preserving semantic content\u2014has not been reported in the literature"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 1,
+      "institute": 1,
+      "category": "response-style",
+      "one_line": "The G\u00f6del case effect results from convergent but separable mechanisms\u2014linguistic pragmatics (Mandarin definiteness underspecification), response-style bias (East Asian caution under complexity), and possibly genuine cognitive differences in identity reasoning\u2014with no single confound fully explanatory and core mechanisms empirically untested.",
+      "confidence": 0.62,
+      "unsupported_claims": [
+        "Machery et al. (2004) found Westerners gave causal-historical responses 56.5% vs. East Asians 31.5% on G\u00f6del",
+        "Sytsma, Livengood, et al. (2015) successfully replicated this with a clarified version",
+        "A large-scale replication over 2000+ Mandarin speakers confirms the G\u00f6del case peculiarly stands out in its ability to elicit robust cultural differences while other probes do not show comparable effects",
+        "Li & Shirai (2000) and subsequent work document that Mandarin nouns are syntactically neutral between mass and count",
+        "Cheng & Sybesma (1999) and Krifka (1995) show Mandarin speakers interpret nouns for individuation comparably to English speakers",
+        "Ji, Peng, & Nisbett (2000) and Chen et al. (2007) show respondents from historically Confucian countries give more cautious responses",
+        "Hardin & Banaji (2015) show response-style bias is heightened under linguistic uncertainty or non-native-language conditions",
+        "Mar\u00edn & Mar\u00edn (1991) show acquiescence and courtesy bias are particularly strong in East Asian and Hispanic populations",
+        "Izumi et al. (2017) and a truth-value judgment task study found cross-cultural differences on G\u00f6del emerge by age 7"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 1,
+      "institute": 2,
+      "category": "epistemic-perspective",
+      "one_line": "The cross-cultural G\u00f6del effect reflects culturally specific strategies for resolving an irreducible perspective ambiguity in the case itself, not linguistic grammar or global cognitive style, explaining why the effect is case-specific.",
+      "confidence": 0.68,
+      "unsupported_claims": [
+        "Machery et al. (2004) reported large cross-cultural differences for the G\u00f6del case with Western participants more Kripkean",
+        "Ding & Liu (2022) show the G\u00f6del effect weakens when presented in Chinese translation (39% descriptivist in Hong Kong vs. ~65% for East Asians tested in English in original study)",
+        "Sytsma & Livengood conducted experiments showing the questions were ambiguous between speaker's reference and semantic reference",
+        "Ding & Liu (2022) confirm there is descriptive ambiguity in Kripke's G\u00f6del case regarding types of descriptions with proper names",
+        "Machery conducted clarification experiments isolating the ambiguity showing referential intuitions vary across and within cultures even after controlling for ambiguity",
+        "Hindi, French, and Mongolian speakers show intermediate effects (56\u201358% descriptivist)",
+        "Responses show East Asian participants bias toward social/collective interpretations of reference while Western participants prioritize individual/causal-historical chains"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 1,
+      "institute": 3,
+      "category": "linguistic-confound",
+      "one_line": "The G\u00f6del effect arises from a semantic-linguistic interaction where pro-drop languages' pragmatic inference training interacts with the case's unique name-via-false-description structure, not from broad cultural cognition differences.",
+      "confidence": 0.62,
+      "unsupported_claims": [
+        "East Asian participants were significantly more likely than Western participants to give descriptivist responses to the G\u00f6del case (Machery, Mallon, Nichols & Stich 2004)",
+        "The effect is robust on the G\u00f6del case but weak, absent, or reversed on other reference probes (Jonah, Twin Earth, and others)",
+        "Pro-drop languages (Mandarin Chinese, Japanese, Korean) allow null subjects in up to 30% of contexts where subjects could be omitted",
+        "Modified versions of the G\u00f6del case with relevant presuppositions presented clearly still showed the same pattern of cross-cultural differences",
+        "The Nisbett holistic/analytic framework predicts East Asians should attend more to context-field relations across all reference tasks",
+        "Pro-drop languages rely on topic-prominent structure and pragmatic inference from discourse context rather than grammatical agreement"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 2,
+      "institute": 0,
+      "category": "epistemic-perspective",
+      "one_line": "Case-specificity of G\u00f6del effect likely driven by convergence of bare-noun pragmatics and perspective-taking ambiguity in that particular probe, not global counterfactual-avoidance, but mechanism remains empirically underdetermined.",
+      "confidence": 0.55,
+      "unsupported_claims": [
+        "Machery et al. (2004) reported East Asian participants more likely to give descriptivist responses to G\u00f6del case than Western participants",
+        "Large-scale replications including 2000+ Mandarin Chinese speakers confirm G\u00f6del case elicits robust cross-cultural differences while Jonah and Twin Earth show weaker, absent, or reversed effects",
+        "Machery et al. reported cross-cultural differences in responses to Jonah case with Western participants more likely to choose Kripkean answer",
+        "Cross-cultural differences on G\u00f6del are already in place by age 7",
+        "Counterfactual reasoning competence and mature reasoning about identity under counterfactuals develop later (ages 8\u201310+)",
+        "Machery et al. (2010) replicated G\u00f6del effect when presenting probe to Hong Kong participants in Mandarin Chinese rather than English",
+        "Izumi et al. (2018) identified that bare noun phrases in Chinese and Japanese create multiple interpretations absent from English definite descriptions",
+        "Bare noun phrases in Mandarin and Japanese are multiply ambiguous\u2014can receive weak-definite, existential, or generic interpretations",
+        "Classical and modern Chinese use counterfactual markers (\u5047\u5982, \u8981\u662f) and conditional expressions",
+        "Chinese philosophers engaged in counterfactual reasoning"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 2,
+      "institute": 1,
+      "category": "response-style",
+      "one_line": "The G\u00f6del case cross-cultural difference is real but case-specific; no single mechanism (linguistic structure, cognitive style, or perspective ambiguity) is sufficient; acquiescence response bias under forced-choice format triggered by epistemic uncertainty remains the most plausible untested mechanism, likely interacting with linguistic and cognitive factors.",
+      "confidence": 0.55,
+      "unsupported_claims": [
+        "East Asian participants gave descriptivist responses to the G\u00f6del case at ~65% versus Western participants at ~35%",
+        "Sytsma & Livengood (2011) identified epistemic perspective ambiguity in the G\u00f6del case and revised versions minimized this ambiguity; the cross-cultural difference persisted",
+        "Izumi et al. (2018) showed that Chinese versions of the probe use multiply-ambiguous bare noun phrases introducing confounds",
+        "East Asian respondents show acquiescence bias 25-30 percentage points higher in collectivist, high power-distance cultures (Smith et al. 2004; Harzing 2006)",
+        "Ding & Liu (2022) report that native Mandarin administration of the G\u00f6del probe yielded 39% descriptivist responses versus 65% in English"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 2,
+      "institute": 2,
+      "category": "linguistic-confound",
+      "one_line": "Cross-cultural reference intuitions likely reflect multiple partially independent factors (response-style bias, Mandarin article/topic pragmatics, possibly genuine semantic differences), none directly isolated on the G\u00f6del/Jonah probes; effect generalizes beyond G\u00f6del, falsifying probe-specificity.",
+      "confidence": 0.54,
+      "unsupported_claims": [
+        "Cross-cultural differences in reference responses were found in cases patterned after Kripke's Jonah case (Machery et al. 2004)",
+        "Subsequent work controlling for question ambiguity (Sytsma & Livengood) still observed the same pattern",
+        "Response-style bias is higher in nations high on family collectivism and uncertainty avoidance (Hardin & Konishi, Lalwani et al.)",
+        "Mandarin bare nouns permit both definite and indefinite readings depending on context (Li 1999, Cheng & Sybesma 1999)",
+        "Zero anaphora is the norm under topic continuity in topic-prominent languages like Mandarin; when topic continuity breaks, the language recruits demonstratives (Paul 2014)",
+        "Pro-drop languages may train pragmatic inference habits that differ from non-pro-drop languages (Vaid & Chengappa)",
+        "No direct measurement of acquiescence, modesty, or uncertainty-driven response bias on the G\u00f6del/Jonah probes themselves has been published",
+        "The direct comparison of bare-noun vs. demonstrative-marked Mandarin versions of the G\u00f6del case on native speakers has never been conducted"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 1,
+      "round": 2,
+      "institute": 3,
+      "category": "linguistic-confound",
+      "one_line": "Cross-cultural difference in G\u00f6del case arises from English definite article's uniqueness presupposition versus Mandarin classifiers' familiarity-without-uniqueness encoding, which permits ambiguity tolerance for the probe's dual competing descriptions (brute-fact vs. social-fact), amplified secondarily by response-style bias.",
+      "confidence": 0.58,
+      "unsupported_claims": [
+        "Over 2,000 Mandarin speakers tested across five online studies with ~65% East Asian descriptivist vs. ~56.5% Western (2025, cited in Index 10)",
+        "Mandarin counterfactuals show positive correlation with demonstratives, negation, emphatic modals, and optative mood (Yong 2016)",
+        "Ding & Liu (2022) found the effect weakens when probe is administered in native Mandarin rather than English translated version",
+        "Beebe & Undercoffer (2016) controlled for anchoring bias and confirmed effect persists with G\u00f6del as outlier",
+        "Sytsma & Livengood (2012) identified perspective ambiguity in original probe; effect persists even after perspective is disambiguated per Machery (2015)",
+        "Li et al. (2009) established Mandarin definite reference characterized by pragmatic familiarity/identifiability rather than uniqueness presupposition",
+        "Machery et al. (2004) original reported 65% E. Asian descriptivist on G\u00f6del vs. 50% Western with near-zero effect on other probes"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 1,
+      "institute": 0,
+      "category": "linguistic-confound",
+      "one_line": "The G\u00f6del case shows a cross-cultural difference in reference intuitions because it features pragmatically symmetric descriptions (neither canonicalized), triggering East Asian speakers' language-rooted pragmatic-conservatism heuristic, whereas other cases have marked canonical referents.",
+      "confidence": 0.58,
+      "unsupported_claims": [
+        "Machery, Mallon, Nichols & Stich (2004) reported cross-cultural differences in the G\u00f6del case",
+        "Recent large-scale replication studies sampling over 2,000 Mandarin Chinese speakers confirm that the effect attaches specifically to the G\u00f6del case and is weak, absent, or reversed for Jonah, Twin Earth, and Peano cases (Sytsma & Livengood replication; 2025 large-scale study)",
+        "Sytsma & Livengood demonstrated that the original Machery et al. probe was ambiguous between speaker's reference and semantic reference",
+        "Subsequent studies that explicitly disambiguated the question found that the cross-cultural gap persisted",
+        "Masuda and Nisbett demonstrates that Westerners display analytic attentional bias while East Asians display holistic bias",
+        "Mandarin and Cantonese use numeral classifiers to mark definiteness and rely heavily on presupposition maximization and context rather than overt articles",
+        "Countable bare nouns in classifier languages freely occur in argument position for unique definite use"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 1,
+      "institute": 1,
+      "category": "epistemic-perspective",
+      "one_line": "Cross-cultural G\u00f6del-case differences reflect culturally trained perspective-taking strategies in interpreting probe questions rather than semantic competence, presupposition pragmatics, or deep cognitive architecture differences.",
+      "confidence": 0.62,
+      "unsupported_claims": [
+        "Li (2020) demonstrated the cross-cultural pattern persists even after removing the ambiguity Sytsma and Livengood identified",
+        "Li and colleagues (cited in Ding & Liu, 2021) tested whether the cross-cultural effect arises from different strategies for interpreting whose perspective the question asks about",
+        "When participants are explicitly asked which perspective to adopt before answering the reference question, the magnitude of the cross-cultural difference attenuates",
+        "Machery et al. reported cross-cultural differences not only in the G\u00f6del case (58% Western Kripkean vs. 29% Hong Kong Kripkean) but also in Jonah-type cases, where the effect reverses (61% Western 'real discoverer' vs. 66% Hong Kong 'real discoverer')"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 1,
+      "institute": 2,
+      "category": "linguistic-confound",
+      "one_line": "The cross-cultural G\u00f6del effect reflects divergent folk theories of reference shaped by cultural-cognitive styles rather than article-absence parsing artifacts, supported by robustness across clarifications and age 7 emergence, but direct description-dependence remains untested.",
+      "confidence": 0.72,
+      "unsupported_claims": [
+        "The effect generalizes across probes, not confined to G\u00f6del",
+        "Participants by age 7 show systematic cross-cultural variation in truth-value judgment tasks",
+        "The effect persists when the G\u00f6del probe is clarified to minimize speaker's reference/semantic reference ambiguity",
+        "Participants associate different types of descriptions (brute-fact vs. social-fact) with proper names across both cultural groups",
+        "Western analytic cognition privileges causal chains and rigid designation while East Asian holistic cognition privileges thematic coherence",
+        "The cross-cultural pattern is documented in modified G\u00f6del cases and Jonah-like cases with varying effect sizes"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 1,
+      "institute": 3,
+      "category": "linguistic-confound",
+      "one_line": "The G\u00f6del-specificity effect arises from bare nominals in classifier languages creating presupposition ambiguity that interacts with the case's unique naked-identity structure, though false-belief persistence suggests genuine semantic disagreement may also be real.",
+      "confidence": 0.55,
+      "unsupported_claims": [
+        "Machery et al. (2004) reported a 25-point gap between Western (56.5% causal-historical) and East Asian (31.5% causal-historical) participants on the G\u00f6del case",
+        "Zhou et al./recent meta-analysis across 38\u201339 studies confirmed G\u00f6del case peculiarly stands out in ability to elicit robust cultural differences",
+        "Jonah shows only ~13-point gaps; other cases show minimal or reversed gaps",
+        "Related work by Li et al. on perspective-taking shows that when G\u00f6del is embedded in narrative frame, cross-cultural gaps shrink toward Jonah-like levels",
+        "Izumi et al. (2018) identified that experimental stimuli depend on articleless bare noun phrases in Chinese and Japanese that are multiply ambiguous",
+        "Sytsma & Livengood (2011) and Li et al. showed that clarifying narrator's perspective increases causal-theory responses across both cultures but East-West gap persists",
+        "Machery et al. tested false-belief variants where Schmidt (not G\u00f6del) discovered incompleteness, and East Asians continue to give descriptivist-sounding answers more often than Westerners"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 2,
+      "institute": 0,
+      "category": "linguistic-confound",
+      "one_line": "The G\u00f6del case's cross-cultural effect arises from an interaction among perspective-taking ambiguity, the case's lack of narrative scaffolding, and indirect effects of classifier-language structure on reference reasoning\u2014none alone sufficient.",
+      "confidence": 0.58,
+      "unsupported_claims": [
+        "Machery et al. (2004) report ~25-point gap favoring Kripkean responses in Western participants (56.5%) vs. East Asian participants (31.5%) on the G\u00f6del/Schmidt probe",
+        "The same authors report the gap reverses on the Jonah probe (Western 61.5% Kripkean; East Asian 66% Kripkean, a \u20134.5-point gap)",
+        "Sytsma & Livengood (2011) identified ambiguity in the original probe",
+        "Machery (2015) conducted clarification experiments controlling for perspective ambiguity and found the gap shrinks but persists (~18\u201320 percentage points)",
+        "Mallon et al. unpublished child studies show the cross-cultural effect emerges by age 7 in both populations before article semantics are fully mastered (~age 8\u20139)",
+        "Ding & Liu (2022) show respondents distinguish between brute-fact descriptions and social-fact descriptions and both cultures are sensitive to this distinction",
+        "Respondents maintain their responses when scenarios are counterfactual even after clarifications",
+        "Machery (2015) addressed multiple ambiguities in reference interpretation but did not resolve them conclusively"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 2,
+      "institute": 1,
+      "category": "pragmatic-ambiguity",
+      "one_line": "The G\u00f6del case's case-specificity likely reflects an interaction of bare-nominal presupposition structure, pragmatic symmetry, and possibly folk-theoretic differences, but no mechanism has been directly tested against falsification conditions.",
+      "confidence": 0.62,
+      "unsupported_claims": [
+        "The 2025 large-scale study in Philosophical Studies (2000+ Mandarin speakers across five replication studies) reports that 'the G\u00f6del case peculiarly stands out in its ability to elicit robust cultural differences'",
+        "Machery et al.'s original finding of a 25-point cross-cultural gap (56.5% of Western vs. 31.5% of Chinese participants endorsing causal-historical reference)",
+        "Beebe & Undercoffer (2015, 2016) obtained consistent 13-point gaps",
+        "Experimental Philosophy Replication Project reports median effect-size relative to original of 0.86 and success rates around 70%",
+        "The cited meta-analysis reports 22% interaction-effect replication in psychology"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 2,
+      "institute": 2,
+      "category": "measurement-miscoding",
+      "one_line": "The G\u00f6del effect is real but substantially confounded by unmeasured acquiescence bias, bare-nominal translation ambiguity, and differential task comprehension; mechanistic attribution is premature without explicit control.",
+      "confidence": 0.58,
+      "unsupported_claims": [
+        "Machery et al. (2004) reported the original effect",
+        "subsequent replications (Sytsma & Livengood, Machery et al. 2010, 2015) confirmed it under English presentation",
+        "Beebe & Undercoffer (2016) failed to replicate Sytsma and Livengood's results",
+        "Machery (2011) and later work confirm that bare noun phrase ambiguity exists in East Asian translations",
+        "Cheung & Rensvold and Hardin & Roese document that acquiescence bias is higher in collectivist cultures",
+        "Beebe & Undercoffer (2016) note that statistically significant differences on the Jonah case are primarily driven by Western participants who failed to demonstrate accurate understanding",
+        "a recent study (2024-2025) sampled over 2000 Mandarin Chinese speakers and found the G\u00f6del case robustly elicits cultural differences",
+        "Multiple studies note descriptive ambiguity in Kripke's original G\u00f6del case",
+        "Machery et al. (2010, 2015) found that modified versions with clear presuppositions still yielded the same cross-cultural pattern"
+      ]
+    },
+    {
+      "topology": "complete",
+      "rep": 2,
+      "round": 2,
+      "institute": 3,
+      "category": "epistemic-perspective",
+      "one_line": "Cross-cultural differences in G\u00f6del case responses reflect culturally shaped defaults in epistemic perspective-taking during belief attribution, triggered by pragmatic ambiguity and absent when ambiguity is reduced, as shown by Lam (2010) Cantonese replication.",
+      "confidence": 0.68,
+      "unsupported_claims": [
+        "East Asian participants systematically default to interpreting descriptions from the protagonist's epistemic stance while Western participants infer toward the narrator's objective reference",
+        "The effect emerges by age 7",
+        "Machery (2015) demonstrates that clarifying presuppositions does not eliminate the cross-cultural effect",
+        "Sytsma & Livengood (2011) show the effect persists under various framings",
+        "Barrett et al.'s work reveals bimodal distribution of scope-interpretation preferences in doubly-quantified sentences within Mandarin Chinese",
+        "Li et al.'s perspective-taking studies cited in Ding & Liu (2021) support the perspective-taking mechanism",
+        "The cross-cultural effect is largest and most reliable in cases with pragmatic symmetry and belief attribution",
+        "Individual and intra-cultural variation in scope interpretation is high",
+        "Machery et al. (2004) report variation across probes with strongest effect for G\u00f6del"
+      ]
+    }
+  ],
+  "usage": {
+    "input_tokens": 3172170,
+    "output_tokens": 178079,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 193
+  },
+  "cost_usd": 5.992565,
+  "briefings_root": "briefings",
+  "_provenance": {
+    "note": "Run artifact generated by the Synthetic Networked Research Institutes project",
+    "url": "https://github.com/nathanielhansen-eng/synthetic-networked-research-institutes",
+    "cite": "CITATION.cff at the repository root"
+  }
+}

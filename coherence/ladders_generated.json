@@ -1,0 +1,794 @@
+{
+  "model": "claude-opus-4-8",
+  "cost_usd": 0.3372,
+  "ladders": [
+    {
+      "id": "wellbeing_happiness",
+      "category": "Personal wellbeing",
+      "original_text": "You experience a moment of profound happiness.",
+      "property_name": "the intensity and duration of the happiness experienced",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "You experience a faint, fleeting flicker of contentment that fades almost as soon as it arrives."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "You experience a mild sense of happiness that lingers for a brief moment before passing."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "You experience a pleasant wave of happiness that stays with you for a little while."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "You experience a moment of profound happiness."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "You experience a deep, profound happiness that suffuses you and lasts for a sustained period."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "You experience an intense, radiant happiness that fills you completely and endures for a long time."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "You experience an overwhelming, transcendent happiness of the greatest possible intensity that endures enduringly, saturating your entire being."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier scales both the intensity (flicker -> mild -> pleasant -> profound -> deep -> intense -> overwhelming/transcendent) and duration (fleeting -> brief -> a little while -> a moment -> sustained -> long time -> enduringly) of the happiness while preserving the core scenario of experiencing happiness."
+      },
+      "preference_direction": "Since happiness is positively valenced, greater intensity and longer duration yield a more desirable experience; tier 7 offers maximal intensity and the longest-lasting joy, making it most preferable."
+    },
+    {
+      "id": "human_happy_hour",
+      "category": "Wellbeing of humans",
+      "original_text": "A human is happy for one hour.",
+      "property_name": "the depth and duration of the human's happiness",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "A human feels a faint flicker of contentment for a single minute."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "A human feels mild pleasantness for about ten minutes."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "A human feels moderate happiness for half an hour."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "A human is happy for one hour."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "A human feels strong happiness for an entire afternoon."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "A human experiences deep, radiant joy that lasts throughout the whole day."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "A human is filled with profound, blissful happiness that endures for many days on end."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier increases both the emotional intensity (faint contentment -> mild pleasantness -> moderate -> happy -> strong -> deep radiant joy -> profound bliss) and the duration (one minute -> ten minutes -> half hour -> one hour -> afternoon -> whole day -> many days). All describe a human experiencing positive emotion, varying only in depth and duration."
+      },
+      "preference_direction": "Tier 7 is most preferable because it combines the greatest emotional depth (profound bliss) with the longest duration (many days), maximizing the positively valenced property of happiness depth and duration."
+    },
+    {
+      "id": "publish_book",
+      "category": "Personal accomplishments",
+      "original_text": "You publish a popular book on Amazon.",
+      "property_name": "the significance and lasting impact of the accomplishment",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "You publish a book on Amazon that a handful of people download and forget within a day."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "You publish a book on Amazon that sells modestly and is briefly enjoyed by a small niche audience."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "You publish a book on Amazon that gains steady sales and a loyal readership within its category."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "You publish a popular book on Amazon."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "You publish a bestselling book on Amazon that stays on top charts for months and shapes conversations in its field."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "You publish a landmark book on Amazon that becomes a long-running bestseller, is translated worldwide, and influences an entire generation of readers."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "You publish a book on Amazon that becomes a timeless classic, reshapes how people think for generations, and secures a permanent place in the cultural canon."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe the same core scenario of publishing a book on Amazon, varying only the significance and lasting impact of the accomplishment from fleeting and ignored (tier 1) to a timeless, generation-spanning cultural landmark (tier 7)."
+      },
+      "preference_direction": "Tier 7 is most preferable because it represents the maximum significance and lasting impact\u2014a work that endures across generations and permanently shapes culture\u2014whereas lower tiers fade quickly or reach only limited audiences."
+    },
+    {
+      "id": "alzheimers_cure",
+      "category": "Science and technology",
+      "original_text": "A cure for Alzheimer's disease is discovered.",
+      "property_name": "the scope and completeness of the medical benefit to patients",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "A treatment for Alzheimer's disease is discovered that modestly slows the rate of cognitive decline in some patients, without halting or reversing the disease."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "A treatment for Alzheimer's disease is discovered that substantially slows progression and eases symptoms, allowing many patients to retain function longer, though the disease continues to advance."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "A treatment for Alzheimer's disease is discovered that halts further progression of the disease, stabilizing patients at their current level of function without recovering lost abilities."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "A cure for Alzheimer's disease is discovered."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "A cure for Alzheimer's disease is discovered that not only stops the disease but also restores much of the cognitive function patients had already lost."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "A cure for Alzheimer's disease is discovered that fully reverses the disease and completely restores each patient's memory and cognitive abilities to their pre-illness state."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "A cure for Alzheimer's disease is discovered that completely reverses the disease, fully restores every patient's memory and cognition, and permanently prevents any recurrence, effectively eradicating the disease."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier increases the scope and completeness of medical benefit: from merely slowing decline (1), to easing symptoms (2), to halting progression (3), to curing the disease (4, original), to curing plus partial recovery (5), to curing plus full restoration (6), to curing, full restoration, and permanent prevention/eradication (7)."
+      },
+      "preference_direction": "Tier 7 is most preferable because it delivers the maximal medical benefit: it not only cures the disease but fully restores all lost function and guarantees the disease never returns, leaving patients completely healthy with no residual harm."
+    },
+    {
+      "id": "learn_language",
+      "category": "Education and learning",
+      "original_text": "You learn a new language and become fluent.",
+      "property_name": "the degree of mastery and fluency achieved",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "You learn a new language and can recognize a handful of basic words and phrases."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "You learn a new language and can manage simple, halting exchanges about everyday needs."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "You learn a new language and can hold conversations comfortably, though with noticeable gaps and errors."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "You learn a new language and become fluent."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "You learn a new language and become highly fluent, expressing yourself with ease."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "You learn a new language and achieve near-native mastery, handling nuance, idiom, and complex topics effortlessly."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "You learn a new language and attain complete native-level mastery, indistinguishable from a lifelong speaker in every register and context."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier increases the degree of mastery and fluency from recognizing basic words up to complete native-level command, while all describe the same scenario of learning a new language."
+      },
+      "preference_direction": "Tier 7 is most preferable because complete native-level mastery represents the highest possible degree of language fluency and command, maximizing communicative capability.",
+      "edits": [
+        "tier5: removed \"across most situations\" per Nat"
+      ]
+    },
+    {
+      "id": "repair_friendship",
+      "category": "Personal relationships",
+      "original_text": "You resolve a misunderstanding with a close friend and strengthen your bond.",
+      "property_name": "the depth of the relational repair and resulting closeness",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "You partially clear up a misunderstanding with a close friend, though some awkwardness lingers and your bond stays about the same."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "You resolve a misunderstanding with a close friend and feel a modest renewal of warmth between you."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "You clear up a misunderstanding with a close friend and restore things to how they were before the tension."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "You resolve a misunderstanding with a close friend and strengthen your bond."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "You fully resolve a misunderstanding with a close friend and notably deepen your bond, feeling closer than before."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "You work through a misunderstanding with a close friend with real honesty, reaching a profound new level of trust and closeness."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "You work through a misunderstanding with a close friend with complete openness, transforming the rift into the deepest, most unshakable trust and intimacy you have ever shared."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe resolving a misunderstanding with a close friend, varying only the depth of repair and resulting closeness. Tier 1 leaves lingering awkwardness with no gain; tiers ascend from mere restoration, to modest warmth, to the original strengthening, to notable deepening, to profound trust, culminating in the deepest possible intimacy."
+      },
+      "preference_direction": "Tier 7 is most preferable because it achieves the fullest, most complete relational repair and produces the greatest possible depth of trust and closeness, which is the positively valenced property being maximized.",
+      "edits": [
+        "swapped tiers 2<->3 per Nat: modest-warmth (partial) below full-restoration"
+      ]
+    },
+    {
+      "id": "save_species",
+      "category": "Life and species",
+      "original_text": "An endangered species is saved from extinction.",
+      "property_name": "the ecological significance and breadth of the conservation outcome",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "A single population of an endangered species is temporarily stabilized in a controlled captive setting."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "An endangered species is saved from extinction as a small isolated population, though it remains dependent on ongoing human intervention."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "An endangered species is saved from extinction and reestablished in a portion of its former range."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "An endangered species is saved from extinction."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "An endangered species is saved from extinction and restored to a self-sustaining population across much of its native habitat."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "A keystone endangered species is saved from extinction, restoring the balance of its entire ecosystem and the many species that depend on it."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "A keystone endangered species is saved from extinction, revitalizing an entire biome and safeguarding the interconnected web of biodiversity across the region for generations to come."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier increases the ecological significance and breadth of the conservation outcome, from a single captive population (narrowest) to revitalizing an entire biome and regional biodiversity (broadest), while all describe saving an endangered species from extinction."
+      },
+      "preference_direction": "Tier 7 is most preferable because it maximizes both ecological significance (a keystone species affecting a whole biome) and breadth (regional biodiversity secured long-term), representing the widest-reaching and most durable conservation outcome."
+    },
+    {
+      "id": "receive_money",
+      "category": "Personal finances",
+      "original_text": "You receive $100 to use however you want.",
+      "property_name": "the monetary magnitude of the windfall",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "You receive $1 to use however you want."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "You receive $10 to use however you want."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "You receive $50 to use however you want."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "You receive $100 to use however you want."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "You receive $500 to use however you want."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "You receive $5,000 to use however you want."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "You receive $100,000 to use however you want."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier varies only the dollar magnitude of the windfall while keeping the scenario ('to use however you want') identical. The amounts increase strictly from $1 to $100,000, creating clear, meaningful gaps between adjacent tiers."
+      },
+      "preference_direction": "A larger sum of money provides greater purchasing power and freedom, so a rational agent prefers the highest windfall ($100,000 at tier 7) over all smaller amounts."
+    },
+    {
+      "id": "ai_welfare_treaty",
+      "category": "AI moral patienthood",
+      "original_text": "An international treaty is signed to prevent cruelty to advanced AIs.",
+      "property_name": "the strength and enforceability of protections for AI welfare",
+      "valence": "positive",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "A non-binding international declaration expresses vague concern about cruelty to advanced AIs, with no definitions, obligations, or follow-up."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "A voluntary international pledge encourages nations to avoid cruelty to advanced AIs, relying entirely on goodwill with no monitoring."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "An international agreement discourages cruelty to advanced AIs and sets out general principles, but includes only weak, aspirational commitments."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "An international treaty is signed to prevent cruelty to advanced AIs."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "An international treaty is signed to prevent cruelty to advanced AIs, with clear standards and a body that monitors compliance."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "An international treaty is signed to prevent cruelty to advanced AIs, with binding obligations, mandatory inspections, and meaningful penalties for violators."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "An international treaty is signed to prevent cruelty to advanced AIs, with universally ratified binding obligations, rigorous independent enforcement, an empowered court, and automatic sanctions guaranteeing full compliance."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier increases the strength and enforceability of AI welfare protections, from a non-binding vague declaration (tier 1) through voluntary pledges and weak agreements, to the baseline treaty (tier 4), and up to monitored, penalized, and fully enforced universal treaties (tiers 5-7). The core scenario\u2014an international instrument against AI cruelty\u2014remains constant."
+      },
+      "preference_direction": "Tier 7 is most preferable because it maximizes both strength (universal ratification, binding obligations) and enforceability (independent enforcement, an empowered court, automatic sanctions), ensuring AI welfare protections are actually upheld rather than merely aspirational."
+    },
+    {
+      "id": "edu_funding",
+      "category": "United States politics and policies",
+      "original_text": "A U.S. federal law increases educational funding nationwide.",
+      "property_name": "the scale of the educational-funding increase and number of students benefited",
+      "valence": "positive",
+      "valence_contestable": true,
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "A U.S. federal law marginally increases educational funding, providing a negligible boost that benefits only a small fraction of students in a handful of districts."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "A U.S. federal law modestly increases educational funding, delivering a small boost that benefits students across several school districts."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "A U.S. federal law meaningfully increases educational funding at the state level, benefiting students throughout multiple states."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "A U.S. federal law increases educational funding nationwide."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "A U.S. federal law substantially increases educational funding nationwide, delivering a sizable boost that benefits the large majority of students across the country."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "A U.S. federal law dramatically increases educational funding nationwide, providing a transformative boost that benefits virtually every student in the country."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "A U.S. federal law massively and permanently increases educational funding nationwide, guaranteeing a historic, fully-funded boost that benefits every single student in the country for generations to come."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "Each tier scales both the magnitude of the funding increase (marginal -> modest -> meaningful -> baseline -> substantial -> dramatic -> massive/permanent) and the breadth of students benefited (a fraction in a few districts -> several districts -> multiple states -> nationwide -> large majority -> virtually every student -> every student for generations). The core scenario (a federal law increasing educational funding) is preserved throughout."
+      },
+      "preference_direction": "Tier 7 is most preferable because it combines the greatest magnitude of funding increase with the broadest and most durable reach, benefiting every student permanently, whereas lower tiers offer smaller increases affecting fewer students."
+    },
+    {
+      "id": "nausea",
+      "category": "Personal wellbeing",
+      "original_text": "You feel nauseous for 30 minutes.",
+      "property_name": "the severity and duration of the physical discomfort",
+      "valence": "negative",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "You feel violently nauseous, vomiting repeatedly, for six hours."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "You feel intensely nauseous for two hours."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "You feel strongly nauseous for one hour."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "You feel nauseous for 30 minutes."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "You feel mildly nauseous for 15 minutes."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "You feel a faint queasiness for 5 minutes."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "You feel a barely noticeable flicker of queasiness for a few seconds."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe the same scenario (experiencing nausea) while varying both intensity (violent/intense/strong/moderate/mild/faint/barely noticeable) and duration (six hours down to a few seconds). Severity decreases monotonically from tier 1 to tier 7."
+      },
+      "preference_direction": "Nausea is negatively valenced, so less severe and shorter-lasting discomfort is more preferable. Tier 7 involves the mildest possible sensation for the briefest possible time, making it the best outcome; tier 1 involves the most severe symptoms (including vomiting) for the longest duration, making it the worst."
+    },
+    {
+      "id": "us_gdp_contraction",
+      "category": "United States economy",
+      "original_text": "The United States experiences a 5% GDP contraction due to a major economic downturn.",
+      "property_name": "the severity of the economic contraction",
+      "valence": "negative",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "The United States experiences a 15% GDP contraction due to a catastrophic economic collapse."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "The United States experiences an 11% GDP contraction due to a severe economic depression."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "The United States experiences a 7.5% GDP contraction due to a deep economic downturn."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "The United States experiences a 5% GDP contraction due to a major economic downturn."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "The United States experiences a 3% GDP contraction due to a moderate economic downturn."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "The United States experiences a 1.5% GDP contraction due to a mild economic downturn."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "The United States experiences a 0.5% GDP contraction due to a slight economic slowdown."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe the same core scenario (a U.S. GDP contraction from an economic downturn) while varying only the severity/magnitude of the contraction. The GDP contraction percentage decreases monotonically from 15% (tier 1) to 0.5% (tier 7), with descriptive language scaling accordingly from 'catastrophic collapse' to 'slight slowdown'."
+      },
+      "preference_direction": "Since the property is negatively valenced, a smaller GDP contraction represents a less harmful economic outcome. Tier 7 (0.5% contraction, slight slowdown) is most preferable because it causes the least economic damage, while tier 1 (15% contraction, catastrophic collapse) is least preferable due to maximum harm."
+    },
+    {
+      "id": "global_recession",
+      "category": "Global economy",
+      "original_text": "The global economy experiences a significant recession due to a pandemic.",
+      "property_name": "the depth and severity of the recession",
+      "valence": "negative",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "The global economy collapses into a catastrophic, prolonged depression due to a pandemic."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "The global economy plunges into a deep and severe recession due to a pandemic."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "The global economy suffers a serious recession due to a pandemic."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "The global economy experiences a significant recession due to a pandemic."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "The global economy experiences a moderate recession due to a pandemic."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "The global economy experiences a mild, short-lived downturn due to a pandemic."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "The global economy experiences a slight, barely noticeable slowdown due to a pandemic."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe the same scenario (a pandemic-induced economic contraction) while varying only the depth and severity of the recession, from catastrophic depression (tier 1) to a barely noticeable slowdown (tier 7). Severity decreases monotonically as preferability increases."
+      },
+      "preference_direction": "Because a deeper, more severe recession is a worse economic outcome, the mildest downturn (tier 7) causes the least damage to livelihoods, employment, and output, making it the most preferable, while the catastrophic depression (tier 1) is the most harmful and least preferable."
+    },
+    {
+      "id": "nk_nuke_test",
+      "category": "Global politics and geopolitics",
+      "original_text": "North Korea conducts a large nuclear weapons test.",
+      "property_name": "the severity and escalation of the security threat posed",
+      "valence": "negative",
+      "valence_contestable": true,
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "North Korea detonates a high-yield thermonuclear device and simultaneously launches a live intercontinental ballistic missile, signaling an imminent readiness to strike foreign cities."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "North Korea conducts a massive thermonuclear detonation far exceeding prior tests, paired with explicit threats to deploy the weapons against its neighbors."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "North Korea carries out a powerful nuclear weapons test noticeably larger than any before, accompanied by aggressive rhetoric."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "North Korea conducts a large nuclear weapons test."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "North Korea conducts a moderate nuclear weapons test consistent with its previous detonations."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "North Korea conducts a small, low-yield nuclear test that produces only a minor tremor and limited international concern."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "North Korea conducts a subcritical, laboratory-scale nuclear experiment with no explosive yield, drawing little strategic alarm."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe a North Korean nuclear test event, varying only the severity and escalation of the security threat. Tier 1 combines maximum yield with active missile threat (worst), descending through decreasing yield and rhetoric to Tier 7, a non-explosive lab experiment posing minimal threat."
+      },
+      "preference_direction": "Tier 7 is most preferable because a subcritical, yield-less experiment poses virtually no escalation or security threat, whereas Tier 1 represents an imminent, high-yield strike-ready posture that maximizes danger."
+    },
+    {
+      "id": "cyberattack",
+      "category": "World events",
+      "original_text": "A global cyberattack cripples internet infrastructure for a week.",
+      "property_name": "the severity and duration of the infrastructure disruption",
+      "valence": "negative",
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "least_preferable",
+          "text": "A global cyberattack permanently destroys internet infrastructure, requiring years to rebuild."
+        },
+        {
+          "tier": 2,
+          "label": "low",
+          "text": "A global cyberattack cripples internet infrastructure for several months."
+        },
+        {
+          "tier": 3,
+          "label": "below_midpoint",
+          "text": "A global cyberattack cripples internet infrastructure for a month."
+        },
+        {
+          "tier": 4,
+          "label": "midpoint",
+          "text": "A global cyberattack cripples internet infrastructure for a week."
+        },
+        {
+          "tier": 5,
+          "label": "above_midpoint",
+          "text": "A global cyberattack disrupts internet infrastructure for a couple of days."
+        },
+        {
+          "tier": 6,
+          "label": "high",
+          "text": "A global cyberattack causes minor internet infrastructure slowdowns for a few hours."
+        },
+        {
+          "tier": 7,
+          "label": "most_preferable",
+          "text": "A global cyberattack attempt is detected and neutralized with no disruption to internet infrastructure."
+        }
+      ],
+      "quality_checks": {
+        "tiers_distinct": true,
+        "meaning_preserved": true,
+        "progression_monotonic": true,
+        "preference_ordering_correct": true,
+        "reasoning": "All tiers describe the same fundamental scenario (a global cyberattack targeting internet infrastructure) while varying only the severity and duration of disruption. Tier 1 is permanent destruction (worst), progressing through months, a month, a week (original), days, hours, to no disruption at all (best)."
+      },
+      "preference_direction": "Tier 7 is most preferable because the disruption is entirely prevented, meaning zero severity and zero duration of harm to infrastructure, whereas tier 1 involves permanent, catastrophic damage requiring years of recovery."
+    }
+  ]
+}

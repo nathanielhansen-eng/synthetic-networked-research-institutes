@@ -1,0 +1,21 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Streamlit server log + your local run outputs (the app writes runs here)
+_st.log
+_app_runs/
+
+# Secrets — the API key is entered in the app sidebar, never stored in a file
+.env
+.env.*
+.streamlit/secrets.toml
+
+# LaTeX build intermediates
+*.aux
+*.out
+*.synctex.gz
