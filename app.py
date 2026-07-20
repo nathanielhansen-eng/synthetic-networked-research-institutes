@@ -25,6 +25,8 @@ import re
 import subprocess
 import sys
 import time
+import uuid
+import zipfile
 
 import matplotlib
 matplotlib.use("Agg")
@@ -408,6 +410,71 @@ _cache = getattr(st, "cache_data", None) or st.cache  # st.cache gone in modern 
 _rerun = getattr(st, "rerun", None) or st.experimental_rerun  # experimental_rerun gone in modern Streamlit
 
 
+def _workspace_token():
+    """Stable per-visitor workspace token, carried in the URL (?lab=...) so a
+    refresh or a bookmark returns to the same workspace. Best-effort: falls
+    back to a shared workspace if query params are unavailable."""
+    try:
+        if "_lab_token" in st.session_state:
+            return st.session_state["_lab_token"]
+    except Exception:
+        pass
+    tok = None
+    try:
+        qp = getattr(st, "query_params", None)
+        if qp is not None:                     # modern Streamlit
+            v = qp.get("lab")
+            tok = v[0] if isinstance(v, list) else v
+            if not tok:
+                tok = uuid.uuid4().hex[:12]
+                qp["lab"] = tok
+        else:                                  # Streamlit 1.12
+            v = st.experimental_get_query_params().get("lab")
+            tok = (v or [None])[0]
+            if not tok:
+                tok = uuid.uuid4().hex[:12]
+                st.experimental_set_query_params(lab=tok)
+    except Exception:
+        tok = tok or "shared"
+    try:
+        st.session_state["_lab_token"] = tok
+    except Exception:
+        pass
+    return tok
+
+
+# Hosted (Streamlit Community Cloud) = ONE container shared by every visitor,
+# with a temporary disk. Give each visitor their own workspace under _app_runs/
+# so runs, history, and the active-run record never cross between strangers —
+# without this, visitor B sees (and could stop) visitor A's run in progress.
+HOSTED = str(HERE).startswith("/mount/src") or os.environ.get("SNRI_HOSTED") == "1"
+if HOSTED:
+    RUNDIR = HERE / "_app_runs" / _workspace_token()
+    RUNDIR.mkdir(parents=True, exist_ok=True)
+    ACTIVE = RUNDIR / "active_run.json"
+
+
+@_cache
+def _run_zip(out_path):
+    """One run's artifacts (results JSON, report, config, event log, briefings)
+    as an in-memory zip — the hosted app's disk is ephemeral, so the download
+    button under the results is how a visitor keeps their run."""
+    rd = pathlib.Path(out_path).parent
+    stamp = pathlib.Path(out_path).stem.replace("out_", "")
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for name in (f"out_{stamp}.json", f"report_{stamp}.md",
+                     f"config_{stamp}.json", f"events_{stamp}.jsonl"):
+            p = rd / name
+            if p.exists():
+                z.write(p, name)
+        bdir = rd / f"briefings_{stamp}"
+        if bdir.is_dir():
+            for p in sorted(bdir.glob("*.md")):
+                z.write(p, f"briefings_{stamp}/{p.name}")
+    return buf.getvalue(), f"snri_run_{stamp}.zip"
+
+
 @_cache
 def _logo_b64():
     fig = netviz.logo_figure()
@@ -672,6 +739,17 @@ _have_last = bool(_last and pathlib.Path(_last).exists())
 _allruns = load_runs()
 if _have_last or _allruns:
     st.markdown("---")
+    if HOSTED and _have_last:
+        st.markdown(
+            "<div style='background:#2a2410;border:1px solid #f5b301;border-radius:8px;"
+            "padding:10px 14px;margin:4px 0 8px;color:#f5b301;font-size:14px;'>"
+            "⚠️ Research runs are <b>ephemeral on this hosted app</b> — its disk is "
+            "temporary. Download your research reports to keep them.</div>",
+            unsafe_allow_html=True)
+        _zdata, _zname = _run_zip(_last)
+        st.download_button("⬇️ Download this run's research reports (zip)",
+                           data=_zdata, file_name=_zname, mime="application/zip",
+                           key="dl_run")
     tab_brief, tab_metrics, tab_cmp = st.tabs(
         ["📜 Briefings", "📈 Metrics", f"📊 Compare runs ({len(_allruns)})"])
     with tab_brief:
