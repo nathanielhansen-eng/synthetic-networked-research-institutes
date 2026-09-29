@@ -14,6 +14,8 @@ from __future__ import annotations
 import json
 import math
 
+from institute import min_thinking
+
 CATEGORIES = [
     "pragmatic-ambiguity",        # the probe's question is pragmatically ambiguous
     "epistemic-perspective",      # epistemic asymmetry / whose-perspective reading
@@ -54,8 +56,7 @@ def classify(client, model, problem, position_text, max_tokens=1024):
             f"# The institute's final briefing\n{position_text}")
     resp = client.messages.create(
         model=model, max_tokens=max_tokens,
-        system=SYSTEM, thinking={"type": "disabled"},
-        output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
+        system=SYSTEM, **min_thinking(model, {"format": {"type": "json_schema", "schema": SCHEMA}}),
         messages=[{"role": "user", "content": user}],
     )
     text = next((b.text for b in resp.content if getattr(b, "type", None) == "text"), "{}")
@@ -93,8 +94,7 @@ def score_correctness(client, model, target, position_text, max_tokens=512):
     user = f"# TARGET (correct answer / rubric)\n{target}\n\n# POSITION\n{position_text}"
     resp = client.messages.create(
         model=model, max_tokens=max_tokens,
-        system=CORRECTNESS_SYSTEM, thinking={"type": "disabled"},
-        output_config={"format": {"type": "json_schema", "schema": CORRECTNESS_SCHEMA}},
+        system=CORRECTNESS_SYSTEM, **min_thinking(model, {"format": {"type": "json_schema", "schema": CORRECTNESS_SCHEMA}}),
         messages=[{"role": "user", "content": user}],
     )
     text = next((b.text for b in resp.content if getattr(b, "type", None) == "text"), "{}")
@@ -154,8 +154,7 @@ def adjudicate(client, model, problem, briefing, targets, max_tokens=5000):
             f"# The institute's briefing (adjudicate ITS claimed kills)\n{briefing}")
     resp = client.messages.create(
         model=model, max_tokens=max_tokens,
-        system=ADJUDICATION_SYSTEM, thinking={"type": "disabled"},
-        output_config={"format": {"type": "json_schema", "schema": ADJUDICATION_SCHEMA}},
+        system=ADJUDICATION_SYSTEM, **min_thinking(model, {"format": {"type": "json_schema", "schema": ADJUDICATION_SCHEMA}}),
         messages=[{"role": "user", "content": user}],
     )
     text = next((b.text for b in resp.content if getattr(b, "type", None) == "text"), "{}")

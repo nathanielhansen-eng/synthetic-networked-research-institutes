@@ -42,6 +42,8 @@ import pathlib
 import random
 import statistics
 
+from institute import min_thinking
+
 from inventory_ipip import (
     FACETS,
     LIKERT_ANCHORS,
@@ -120,8 +122,7 @@ def administer(client, model, persona_system, items, rng, transcript=None,
         user = _transcript_preamble(transcript) + user
     resp = client.messages.create(
         model=model, max_tokens=max_tokens,
-        system=persona_system, thinking={"type": "disabled"},
-        output_config={"format": {"type": "json_schema", "schema": _schema(items)}},
+        system=persona_system, **min_thinking(model, {"format": {"type": "json_schema", "schema": _schema(items)}}),
         messages=[{"role": "user", "content": user}],
     )
     text = next((b.text for b in resp.content if getattr(b, "type", None) == "text"), "{}")

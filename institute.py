@@ -59,8 +59,9 @@ CODE_EXEC = {"type": "code_execution_20260521", "name": "code_execution"}
 
 # ---- pricing ($ per 1M tokens; input, output) -------------------------------
 PRICING = {
+    "claude-opus-5-5": (4.0, 20.0), "claude-sonnet-5-5": (2.0, 10.0),
     "claude-opus-4-8": (5.0, 25.0), "claude-opus-4-7": (5.0, 25.0),
-    "claude-sonnet-5": (3.0, 15.0), "claude-sonnet-4-6": (3.0, 15.0),
+    "claude-sonnet-5": (2.0, 10.0), "claude-sonnet-4-6": (3.0, 15.0),
     "claude-haiku-4-5": (1.0, 5.0), "claude-fable-5": (10.0, 50.0),
 }
 WEB_SEARCH_PER_1K = 10.0  # Anthropic web-search tool, approx; billed separately
@@ -71,10 +72,30 @@ USAGE_KEYS = ("input_tokens", "output_tokens",
 
 
 def _price(model):
-    for k, v in PRICING.items():
+    # longest prefix wins, so "claude-sonnet-5-5" isn't priced as "claude-sonnet-5"
+    for k in sorted(PRICING, key=len, reverse=True):
         if model.startswith(k):
-            return v
+            return PRICING[k]
     return (5.0, 25.0)
+
+
+def min_thinking(model, output_config=None):
+    """Request kwargs for the least thinking a model allows (judge / persistence calls).
+
+    Opus 5.5 and Sonnet 5.5 reject thinking "disabled" with a 400: Sonnet 5.5's
+    floor is "between_tools"; Opus 5.5 only runs adaptive, so we set effort low.
+    """
+    oc = dict(output_config or {})
+    if model.startswith("claude-opus-5-5"):
+        kw = {}
+        oc["effort"] = "low"
+    elif model.startswith("claude-sonnet-5-5"):
+        kw = {"thinking": {"type": "between_tools"}}
+    else:
+        kw = {"thinking": {"type": "disabled"}}
+    if oc:
+        kw["output_config"] = oc
+    return kw
 
 
 def cost_of(usage: dict, model: str) -> float:

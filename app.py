@@ -101,7 +101,8 @@ PRESETS = {
 }
 
 TOPOLOGIES = ["cycle", "wheel", "complete", "line"]
-MODELS = ["claude-haiku-4-5", "claude-sonnet-5", "claude-opus-4-8"]
+MODELS = ["claude-haiku-4-5", "claude-sonnet-5", "claude-sonnet-5-5",
+          "claude-opus-4-8", "claude-opus-5-5"]
 
 
 # --------------------------------------------------------------------------- #
