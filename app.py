@@ -576,6 +576,13 @@ with st.sidebar:
     st.subheader("Problem")
     preset = st.selectbox("Preset", list(PRESETS))
     problem = st.text_area("Research question", value=PRESETS[preset]["problem"], height=130)
+    # Streamlit's own "⌘+Enter to apply" hint only commits the text; it never starts a run,
+    # so put a Run button right here instead of only at the bottom of the sidebar.
+    go_top = False
+    if not run:
+        st.caption("⌘+Enter only saves the question. Press ▶ Run to start "
+                   "(the settings below still apply).")
+        go_top = st.button("▶ Run", key="run_top")
     use_gt = st.checkbox("Ground-truth mode", value=bool(PRESETS[preset]["ground_truth"]),
                          help="Score each institute's position for correctness vs a target.")
     ground_truth = st.text_area("Ground-truth target / rubric",
@@ -624,7 +631,7 @@ with st.sidebar:
                        "reports everything that exists — marked as KILLED "
                        "BY USER.")
     else:
-        go = st.button("▶ Run")
+        go = st.button("▶ Run", key="run_bottom") or go_top
 
     _runs = load_runs()
     if _runs:
